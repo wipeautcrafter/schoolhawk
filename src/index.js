@@ -38,3 +38,13 @@ function downloadListButton(el) {
 	fs.writeFileSync(exportPath, listToTxt(listName), 'utf8');
 	alert("Your list has been downloaded to "+exportPath);
 }
+
+function uploadList(path) {
+	writeList(require("path").basename(path), getListByPath(path));
+	createListsList();
+	alert("List succesfully uploaded.");
+}
+
+String.prototype.replaceLast = (k, v) => {
+	return this.substring(0, this.lastIndexOf(k))+v+this.substring(this.lastIndexOf(k)+1);
+};
