@@ -14,5 +14,6 @@ if %ERRORLEVEL% NEQ 0 (
 	echo Installing NodeJS...
 	start /wait msiexec /i "node-v6.11.5-x64.msi" /quiet /qn /norestart
 	del "node-v6.11.5-x64.msi"
-	start run.bat
 )
+ECHO Succesfully installed SchoolHawk!
+pause
