@@ -137,7 +137,7 @@ function keyPress(e) {
 		swipeRight();
 	} else if(key == 37) {
 		swipeLeft();
-	} else if(key == 32) {
+	} else if(key == 32 || key == 38 || key == 40) {
 		flipCard();
 	}
 }
