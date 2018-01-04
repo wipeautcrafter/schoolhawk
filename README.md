@@ -1,2 +1,4 @@
-# schoolhawk
-A program to help you with learning for school.
+## schoolhawk
+SchoolHawk is a program written in NodeJS using Electron, and helps people with learning.
+
+# Usage
