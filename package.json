@@ -1,8 +1,17 @@
 {
-  "name": "SchoolHawk",
+  "name": "schoolhawk",
   "version": "1.2.5",
   "main": "main.js",
   "devDependencies": {
     "electron-winstaller": "^2.6.3"
-  }
+  },
+  "description": "schoolhawk is a program to help you with school",
+  "dependencies": {
+    "electron": "^1.7.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wipeautcrafter",
+  "license": "ISC"
 }
