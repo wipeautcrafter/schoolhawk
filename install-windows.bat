@@ -1,5 +1,11 @@
 @echo off
 cd %~dp0
+AT > NUL
+IF %ERRORLEVEL% NEQ 0 (
+    ECHO You need to run me as an administrator!
+    pause
+    EXIT
+)
 WHERE node
 cls
 if %ERRORLEVEL% NEQ 0 (
