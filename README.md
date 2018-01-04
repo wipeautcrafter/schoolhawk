@@ -23,7 +23,7 @@ npm start
 // starting schoolhawk
 electron .
 ```
-
+# Detailed Description
 ## Main Menu
 In the main menu you get an overview of all the lists you have created.
 You can either play, edit, download, print and delete these lists.
