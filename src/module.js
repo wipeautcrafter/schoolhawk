@@ -46,6 +46,10 @@ function getList(name) {
 	return JSON.parse(fs.readFileSync("./src/lists/"+name+".list").toString());
 }
 
+function getListByPath(path) {
+	return JSON.parse(fs.readFileSync(path).toString());	
+}
+
 function writeList(name, json) {
 	return fs.writeFileSync("./src/lists/"+name+".list", json, 'utf8');
 }
