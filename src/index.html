@@ -13,6 +13,8 @@
       <span class="title">
         <strong>your lists</strong>
         <button class="list create" onclick="location.href='create.html'"></button>
+        <button class="list upload" onclick="document.getElementById('upload').click()"></button>
+        <input type="file" id="upload" accept=".list" style="display:none;" onchange="if(this.files.length > 0) uploadList(this.files[0].path);">
       </span>
     </center>
     <div id="lists"></div>
