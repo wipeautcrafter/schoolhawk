@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="module.js"></script>
+    <script src="create.js"></script>
+    <link rel="stylesheet" type="text/css" href="ttf/fonts.css">
+    <link rel="stylesheet" type="text/css" href="create.css">
+  </head>
+  <body>
+    <center>
+      <span class="title">
+        <strong>List Editor</strong>
+        <button class="list save" onclick="createTable()"></button>
+        <button class="list back" onclick="createTable();location.href='index.html';"></button>
+      </span>
+      <div id="new-list">
+        <br><input type="text" id="list-name-input" value="ListName">
+        <br><br><table id="new-list-table">
+          <tbody></tbody>
+        </table>
+        <input type="text" style="padding:0px;height:0px;border:none;" onfocus="createRow()">
+      </div>
+    </center>
+  </body>
+</html>

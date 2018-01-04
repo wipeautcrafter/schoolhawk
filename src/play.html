@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>SchoolHawk</title>
+    <script src="module.js"></script>
+    <script src="play.js"></script>
+    <link rel="stylesheet" type="text/css" href="ttf/fonts.css">
+    <link rel="stylesheet" type="text/css" href="play.css">
+  </head>
+  <body>
+    <button class="list back" onclick="location.href='index.html';"></button>
+
+    <button class="list help" onclick="helpButton()"></button>
+    <div id="help-menu">
+      On the front of the card is the question,
+      <br>and on the back of the card the answer.
+      <br>You think of the answer to the question inside your head.
+      <br>Press <strong>space</strong> to flip the card, and check your answer.
+      <br>If you had it incorrect press <strong>the left arrow</strong>,
+      <br>and if you had it correct you press <strong>the right arrow</strong>.
+      <br>you can also swipe <b>left</b>, <b>right</b>, <b>up</b> and <b>down</b>.
+      <br><strong>Good luck with learning!</strong>
+    </div>
+
+    <button class="list settings" onclick="settingsButton()"></button>
+    <div id="settings-menu">
+      <span id="settings-content" style="font-size: 1.25vw;"><strong id="settings-content">Question Type</strong></span>
+      <div id="settings-content" style="text-align: left;">
+        <input id="settings-content" type="radio" name="qar" onclick="changedSetting(this)" checked> question-answer
+        <br><input id="settings-content" type="radio" name="qar" onclick="changedSetting(this)"> answer-question
+        <br><input id="settings-content" type="radio" name="qar" onclick="changedSetting(this)"> randomize
+      </div>
+    </div>
+
+    <div class="centered">
+      <div id="card">
+        <div id="card-content">-</div>
+        <div id="card-footer">
+          use <b>space</b> to flip and use <b>&#8678;</b> and <b>&#8680;</b> to swipe
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

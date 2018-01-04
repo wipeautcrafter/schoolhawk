@@ -1,0 +1,197 @@
+@keyframes flipCard {
+    0% {width: 30vw;font-size:0vw;}
+    50% {width: 0vw;font-size:0vw;}
+    100% {width: 30vw;font-size:0vw;}
+}
+
+@keyframes swipeLeft {
+	90% {
+		opacity: 0;
+		transform: translate(-250%, -0%);
+	}
+	99% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes swipeRight {
+	90% {
+		opacity: 0;
+		transform: translate(250%, -0%);
+	}
+	99% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+body {
+	background-color: #5A5A5A;
+	overflow: hidden;
+}
+
+.list {
+	position: absolute;
+	top: .5vw;
+
+	height: 3vw;
+	width: 3vw;
+
+	border: .2vw solid #D0D0D0;
+	border-radius: 1vw;
+
+	background-color: white;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 75% 75%;
+
+	cursor: pointer;
+
+	outline: none;
+
+	-webkit-transition: .1s ease-in-out;
+}
+.list.back {
+	right: .5vw;
+	background-image: url('img/list-back.png');
+}
+.list.help {
+	right: 4vw;
+	background-image: url('img/list-help.png');
+}
+.list.settings {
+	right: 7.5vw;
+	background-image: url('img/list-settings.png');
+}
+
+.list:hover {
+	transform: scale(.9, .9);
+}
+.list:active {
+	transform: scale(1.1, 1.1);
+}
+.centered {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	text-align: center;
+	-webkit-transform: translate(-50%, -50%);
+}
+
+#card {
+	height: 40vw;
+	width: 30vw;
+	background-color: #E0E0E0;
+
+	border-radius: 1vw;
+	box-shadow: .25vw .25vw 0.25vw .25vw #D9D9D9;
+
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+
+	-webkit-transition: .15s ease-in-out;
+}
+
+#card:hover {
+	transform: scale(.975, .975);
+}
+
+#card-content {
+	width: 100%;
+
+	font-family: Cabin;
+	font-size: 2vw;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+}
+
+#card-footer {
+	width: 100%;
+
+	font-family: Cabin;
+	font-size: 1vw;
+
+	position: absolute;
+	bottom: 1vw;
+}
+
+#help-menu {
+	font-family: Cabin;
+	background-color: white;
+	border-radius: .25vw;
+	font-size: 0vw;
+	padding: 1vw 0vw 1vw 0vw;
+	position: absolute;
+	right: 4vw;
+	top: 4.25vw;
+	width: 0vw;
+	text-align: center;
+}
+#help-menu.toggled {
+	width: 25vw;
+	font-size: 1vw;
+}
+#help-menu.toggled:before {
+	content: '';
+	height: 0vw;
+	width: 0vw;
+	position: absolute;
+    right: 1vw;
+    top: -1vw;
+	border: .5vw solid transparent;
+	border-bottom-color: white;
+}
+
+#settings-menu {
+	font-family: Cabin;
+	background-color: white;
+	border-radius: .25vw;
+	font-size: 0vw;
+	padding: 1vw 0vw 1vw 0vw;
+	position: absolute;
+	right: 7.5vw;
+	top: 4.25vw;
+	width: 0vw;
+	text-align: center;
+}
+#settings-menu > * {
+	display: none;
+}
+#settings-menu.toggled > * {
+	display: block;
+}
+#settings-menu.toggled {
+	width: 25vw;
+	font-size: 1vw;
+}
+#settings-menu.toggled:before {
+	content: '';
+	height: 0vw;
+	width: 0vw;
+	position: absolute;
+    right: 1vw;
+    top: -1vw;
+	border: .5vw solid transparent;
+	border-bottom-color: white;
+}
+
+.flip {
+	animation: flipCard .75s ease-in-out;
+}
+.flip > div {
+	animation: flipCard .75s ease-in-out;	
+}
+.swipeLeft {
+	animation: swipeLeft .75s ease-in-out;
+}
+.swipeRight {
+	animation: swipeRight .75s ease-in-out;
+}
