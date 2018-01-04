@@ -40,7 +40,7 @@ function downloadListButton(el) {
 }
 
 function uploadList(path) {
-	writeList(require("path").basename(path), getListByPath(path));
+	writeList(require("path").basename(path).replace(/\.list/g, "").replace(/\_/, ""), getListByPath(path));
 	createListsList();
 	alert("List succesfully uploaded.");
 }
