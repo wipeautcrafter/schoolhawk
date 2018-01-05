@@ -3,14 +3,8 @@ SchoolHawk is a program written in NodeJS using Electron, and helps people with 
 
 # Installation
 ## windows users
-**RECOMMENDED:**
 For windows users you can download git bash [here](https://git-scm.com/downloads) and follow the linux installation.
-
-**UNRECOMMENDED:**
-You can also click ``Download ZIP`` and extract it to where ever you want.
-Then you need to run ``install-windows.bat`` in administrator mode, and it will download NodeJS and SchoolHawk automatically.
-Once you are finished, you need to run a cmd window in that location and type in ``npm install -g electron``.
-After that you can type ``electron .`` in cmd to start SchoolHawk.
+I removed the windows installer because of instability.
 
 ## linux users
 ```shell
