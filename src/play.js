@@ -1,7 +1,6 @@
 window.onload = () => {
 	if(getMessage() && getMessage().startsWith("play:")) {
-		queue = getList(getMessage().replace("play:", "")).rows;
-		nextCard();
+		start();
 	} else {
 		location.href = "index.html";
 	}
@@ -14,7 +13,9 @@ window.addEventListener("mouseup", mouseUp, false);
 var queue = [];
 var currCards = [];
 var isBusy = false;
+
 var questionType = 0;
+var shuffleCards = false;
 
 var dragStart = {
 	"x": null,
@@ -24,6 +25,22 @@ var dragStart = {
 var correct = 0;
 var total = 0;
 
+function start() {
+	 queue = [];
+	 currCards = [];
+	 isBusy = false;
+
+	 dragStart = {
+		"x": null,
+		"y": null
+	};
+
+	correct = 0;
+	total = 0;
+
+	queue = getList(getMessage().replace("play:", "")).rows;
+	nextCard();
+}
 
 function nextCard() {
 	if(queue.length < 1 && currCards.length < 1) {
@@ -52,8 +69,7 @@ function nextCard() {
 	total++;
 
 	while(currCards.length < 4 && queue.length > 0) {
-		currCards.push(queue[0]);
-		queue.shift();
+		currCards.push(shuffleCards ? queue.takeRandom()[0] : queue.take(0)[0]);
 	}
 
 	document.getElementById("card-content").innerHTML = currCards[0][questionType < 2 ? questionType : Math.floor((Math.random() * 2) + 0)];
@@ -127,8 +143,14 @@ function settingsButton() {
 		document.getElementById("settings-menu").className = "toggled";
 	}
 }
-function changedSetting(el) {
-	questionType = Array.from(el.parentElement.getElementsByTagName("input")).indexOf(el);
+
+function changedQuestionType(el) {
+	questionType = Array.from(el.parentElement.parentElement.getElementsByTagName("input")).indexOf(el);
+	start();
+}
+function toggledShuffleSetting(el) {
+	shuffleCards = el.checked;
+	start();
 }
 
 function keyPress(e) {
@@ -146,11 +168,6 @@ function mouseDown(e) {
 	e.preventDefault();
 	dragStart.x = e.clientX;
 	dragStart.y = e.clientY;
-
-	if(!e.target) return;
-	if(!(e.target.id == "help-menu" || e.target.id == "settings-menu" || e.target.id == "settings-content")) {
-		document.getElementById("help-menu").className = "";
-		document.getElementById("settings-menu").className = "";	}
 }
 
 function mouseUp(e) {
