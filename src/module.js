@@ -81,3 +81,15 @@ function printList(name) {
 
 	child_process.exec("src\\print.bat \"src\\printList.txt\"");
 }
+
+Math.range = (min, max) => {
+  return Math.floor(Math.random() * (max+1 - min)) + min;
+};
+
+Array.prototype.takeRandom = function() {
+  return this.splice(Math.range(0,this.length-1), 1);
+};
+
+Array.prototype.take = function(i) {
+	return this.splice(i, 1);
+}
