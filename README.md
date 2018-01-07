@@ -8,14 +8,10 @@ I removed the windows installer because of instability.
 
 ## linux users
 ```shell
-// downloading the project
 git clone https://github.com/wipeautcrafter/schoolhawk
-// going into the project folder
 cd schoolhawk
-// setting up the nodejs packages
+npm install
 npm start
-// starting schoolhawk
-electron .
 ```
 # Detailed Description
 ## Main Menu
