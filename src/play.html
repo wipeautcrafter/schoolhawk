@@ -25,11 +25,14 @@
 
     <button class="list settings" onclick="settingsButton()"></button>
     <div id="settings-menu">
-      <span id="settings-content" style="font-size: 1.25vw;"><strong id="settings-content">Question Type</strong></span>
-      <div id="settings-content" style="text-align: left;">
-        <input id="settings-content" type="radio" name="qar" onclick="changedSetting(this)" checked> question-answer
-        <br><input id="settings-content" type="radio" name="qar" onclick="changedSetting(this)"> answer-question
-        <br><input id="settings-content" type="radio" name="qar" onclick="changedSetting(this)"> randomize
+      <span style="font-size:2.25vw;"><strong>Settings</strong></span>
+      <br><span style="font-size:1.25vw;text-align:left;"><strong>Question Order</strong></span>
+      <div style="text-align:left;">
+        <label><input type="radio" name="qar" onclick="changedQuestionType(this)" checked> question-answer</label>
+        <br><label><input type="radio" name="qar" onclick="changedQuestionType(this)"> answer-question</label>
+        <br><label><input type="radio" name="qar" onclick="changedQuestionType(this)"> randomize</label>
+        <br><br><br><span style="font-size:1.25vw;text-align:left;"><strong>Card Settings</strong></span>
+        <br><label><input type="checkbox" onclick="toggledShuffleSetting(this)"> shuffle cards</label>
       </div>
     </div>
 
